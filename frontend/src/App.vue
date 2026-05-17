@@ -8,6 +8,7 @@
             <div class="ml-10 flex items-baseline space-x-4">
               <router-link to="/" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700" active-class="bg-blue-900" exact-active-class="bg-blue-900">Dashboard</router-link>
               <router-link to="/products" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700" active-class="bg-blue-900">Produtos</router-link>
+              <router-link to="/movements/in" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-700" active-class="bg-blue-900">Movimentações</router-link>
             </div>
           </div>
         </div>

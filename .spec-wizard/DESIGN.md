@@ -40,5 +40,14 @@ uses sqlite. O projeto deve ser estruturado em dois diretórios raízes principa
 ## 8. Implementation Instructions
 Follow project structure. Inicie o backend com `go mod init` dentro da pasta `/backend` e o frontend com `npm create vite@latest frontend -- --template vue` na raiz.
 
+
+## 9. Stock entry screen
+Frontend screen for entering stock entry data.
+
+## 10. stock exit screen
+Frontend screen for entering stock outflow transactions.
+
+
+
 ---
 📊 **Architecture Health: 100%**
