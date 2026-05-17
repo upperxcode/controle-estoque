@@ -11,6 +11,7 @@ import (
 type MovementRepository interface {
 	Register(movement *model.Movement) error
 	ListByProduct(productID int64) ([]model.Movement, error)
+	ListAll(limit int) ([]model.Movement, error)
 }
 
 type sqliteMovementRepository struct {
@@ -72,5 +73,11 @@ func (r *sqliteMovementRepository) Register(m *model.Movement) error {
 func (r *sqliteMovementRepository) ListByProduct(productID int64) ([]model.Movement, error) {
 	movements := []model.Movement{}
 	err := r.db.Select(&movements, "SELECT * FROM movements WHERE product_id = ? ORDER BY created_at DESC", productID)
+	return movements, err
+}
+
+func (r *sqliteMovementRepository) ListAll(limit int) ([]model.Movement, error) {
+	movements := []model.Movement{}
+	err := r.db.Select(&movements, "SELECT * FROM movements ORDER BY created_at DESC LIMIT ?", limit)
 	return movements, err
 }
