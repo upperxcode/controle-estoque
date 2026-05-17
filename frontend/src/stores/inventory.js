@@ -5,9 +5,18 @@ import movementService from "../services/movementService";
 export const useInventoryStore = defineStore("inventory", {
   state: () => ({
     products: [],
+    movements: [],
     loading: false,
     error: null,
   }),
+  getters: {
+    totalItems: (state) =>
+      state.products.reduce((acc, p) => acc + p.quantity, 0),
+    lowStockCount: (state) =>
+      state.products.filter((p) => p.quantity < 5).length,
+    totalValue: (state) =>
+      state.products.reduce((acc, p) => acc + p.price * p.quantity, 0),
+  },
   actions: {
     async fetchProducts() {
       this.loading = true;
@@ -16,6 +25,18 @@ export const useInventoryStore = defineStore("inventory", {
         this.products = response.data;
       } catch (err) {
         this.error = "Erro ao carregar produtos";
+        console.error(err);
+      } finally {
+        this.loading = false;
+      }
+    },
+    async fetchRecentMovements() {
+      this.loading = true;
+      try {
+        const response = await movementService.getAll();
+        this.movements = response.data;
+      } catch (err) {
+        this.error = "Erro ao carregar movimentações";
         console.error(err);
       } finally {
         this.loading = false;

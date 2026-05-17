@@ -1,0 +1,215 @@
+{
+  "project": {
+    "name": "Controle de Estoque",
+    "language": "Go (Gin/Sqlx) & Vue.js 3 (Pinia/Tailwind)",
+    "pattern": "Repository / Store-Component",
+    "status": "in_progress"
+  },
+  "sprints": [
+    {
+      "id": 1,
+      "title": "Fundação e Gestão de Produtos",
+      "status": "completed",
+      "tasks": [
+        {
+          "id": "1.1",
+          "title": "Setup Backend Go e SQLite",
+          "description": "Configuração inicial do projeto Go, conexão com SQLite usando Sqlx e setup do roteamento Gin.",
+          "status": "completed",
+          "acceptance_criteria": [
+            {
+              "id": "1.1.1",
+              "text": "Endpoint /health retornando status OK",
+              "status": "completed"
+            },
+            {
+              "id": "1.1.2",
+              "text": "Migrações iniciais de tabela criadas com sucesso",
+              "status": "completed"
+            },
+            {
+              "id": "1.1.3",
+              "text": "Conexão com banco de dados validada em teste unitário",
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "title": "CRUD de Produtos (Backend)",
+          "description": "Implementação do repositório, handlers e rotas para gerenciamento de produtos.",
+          "status": "completed",
+          "acceptance_criteria": [
+            {
+              "id": "1.2.1",
+              "text": "Endpoints POST, GET, PUT, DELETE para produtos funcionando",
+              "status": "completed"
+            },
+            {
+              "id": "1.2.2",
+              "text": "Validação de dados obrigatórios no payload",
+              "status": "completed"
+            },
+            {
+              "id": "1.2.3",
+              "text": "Testes de repositório cobrindo todas as operações",
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "title": "Interface de Produtos (Frontend)",
+          "description": "Criação da view de produtos, componentes de formulário e integração com store Pinia.",
+          "status": "completed",
+          "acceptance_criteria": [
+            {
+              "id": "1.3.1",
+              "text": "Listagem de produtos renderizando dados da API",
+              "status": "completed"
+            },
+            {
+              "id": "1.3.2",
+              "text": "Formulário de criação/edição funcional com feedback de erro",
+              "status": "completed"
+            },
+            {
+              "id": "1.3.3",
+              "text": "Estado global atualizado corretamente após mutações",
+              "status": "completed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Movimentações de Estoque",
+      "status": "in_progress",
+      "tasks": [
+        {
+          "id": "2.1",
+          "title": "Fluxo de Movimentação (Backend)",
+          "description": "Implementação da lógica de registro de entrada/saída com atualização automática de saldo no produto.",
+          "status": "completed",
+          "acceptance_criteria": [
+            {
+              "id": "2.1.1",
+              "text": "Registro de movimento persiste no banco e altera quantity do produto",
+              "status": "completed"
+            },
+            {
+              "id": "2.1.2",
+              "text": "Impedir saídas que resultem em estoque negativo",
+              "status": "completed"
+            },
+            {
+              "id": "2.1.3",
+              "text": "Endpoint de listagem de movimentos implementado",
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "title": "Telas de Entrada e Saída (Frontend)",
+          "description": "Desenvolvimento das interfaces para registro manual de transações de estoque.",
+          "status": "completed",
+          "acceptance_criteria": [
+            {
+              "id": "2.2.1",
+              "text": "View de entrada permite selecionar produto e quantidade",
+              "status": "completed"
+            },
+            {
+              "id": "2.2.2",
+              "text": "View de saída valida disponibilidade antes de enviar",
+              "status": "completed"
+            },
+            {
+              "id": "2.2.3",
+              "text": "Lista de movimentos recentes visível para auditoria",
+              "status": "completed"
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "title": "Dashboard e Métricas Visuais",
+          "description": "Implementação do painel de gerenciamento visual com indicadores chave (KPIs).",
+          "status": "pending",
+          "acceptance_criteria": [
+            {
+              "id": "2.3.1",
+              "text": "Cards de resumo mostrando total de itens, valor e alertas de baixo estoque",
+              "status": "pending"
+            },
+            {
+              "id": "2.3.2",
+              "text": "Gráfico ou lista visual de movimentações recentes",
+              "status": "pending"
+            },
+            {
+              "id": "2.3.3",
+              "text": "Cálculo de métricas realizado via store Pinia",
+              "status": "pending"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Polimento e Segurança",
+      "status": "pending",
+      "tasks": [
+        {
+          "id": "3.1",
+          "title": "Relatórios e Exportação",
+          "description": "Geração de visões agregadas do estoque para conferência rápida.",
+          "status": "pending",
+          "acceptance_criteria": [
+            {
+              "id": "3.1.1",
+              "text": "Filtros por período e tipo na listagem de movimentos",
+              "status": "pending"
+            },
+            {
+              "id": "3.1.2",
+              "text": "Destaque visual para itens abaixo do estoque mínimo",
+              "status": "pending"
+            },
+            {
+              "id": "3.1.3",
+              "text": "Unit/Integration tests cobrindo filtros de busca",
+              "status": "pending"
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "title": "UX/UI Re-design (Tailwind v4)",
+          "description": "Refinamento estético final utilizando as novas capacidades do Tailwind v4.",
+          "status": "pending",
+          "acceptance_criteria": [
+            {
+              "id": "3.2.1",
+              "text": "Interface responsiva em dispositivos móveis",
+              "status": "pending"
+            },
+            {
+              "id": "3.2.2",
+              "text": "Estados de loading e empty states em todas as tabelas",
+              "status": "pending"
+            },
+            {
+              "id": "3.2.3",
+              "text": "Build de produção otimizado e sem avisos de linter",
+              "status": "pending"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
