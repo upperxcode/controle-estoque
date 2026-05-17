@@ -1,0 +1,32 @@
+{
+  "api_contract": "rest",
+  "architecture": "crud",
+  "custom_details": "uses sqlite",
+  "expert": "go-expert",
+  "expert_answers": {},
+  "golden_rules": "",
+  "health": 100,
+  "impl_instructions": "Follow project structure",
+  "language": "pt-BR",
+  "mandatory_plugins": [
+    "github.com/gin-gonic/gin",
+    "github.com/jmoiron/sqlx"
+  ],
+  "patterns_data": [
+    "repository"
+  ],
+  "patterns_gof": [
+    "factory"
+  ],
+  "persistence": "sql",
+  "philosophies": [
+    "kiss",
+    "dry",
+    "solid"
+  ],
+  "prd": "controle de estoque",
+  "project_name": "controle-estoque",
+  "req_f": "estoque, entrada, saída",
+  "req_nf": "performance, segurança",
+  "stack": "Go Backend (Gin/Sqlx)"
+}
